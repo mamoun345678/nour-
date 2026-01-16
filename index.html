@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARETEAEhITABMTFAAUFBQAFRUVABYWFgAXFxgAGRkZABoaGgAbGxsAHBwcAB0dHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEhMUABYXGgAcHB8AIyMlACwsLgA5OTwARUVHAE5OTwBfX2MAaGhpAG1tbgB5eXwAiIiJAQEBAdHR0QAAAAAAAAAAAAAAAAAAAAAAAAAAExQWABkaGwAjJCUAOTk8AE5OTwBfX2MAaGhpAG1tbgB5eXwAiIiJAElJSQBERUYAMDAwABUVFQAAAAAAAAAAAAAAAAAAAAAAAAAAGRscACQkKAFAQUQAX19jAGhoaQBtbW4AeXl8AIiIiQBJSUsATU1OAE5OTwBOTk8AUVFRAB8fIAAAAAAAAAAAAAAAAAAAAAAAAAAAHB0gAC4uMQBiYmUAaGhpAG1tbgB5eXwAiIiJAElJSwBNTU4ATk5PAE5OTwBOTk8ATk5PAE5OTwBPT08AJiYnAAAAAAAAAAAAAAAAAAAAAB4fIQAvLzIAYmJkAGhoaQBtbW4AeXl8AIiIiQBJSUsATU1OAE5OTwBOTk8ATk5PAE5OTwBOTk8ATk5PAE9PTwBPT08AKCgpAAAAAAAAAAAgIiMALzAyAGJiZABoaGkAbW1uAHl5fACIiIkASUlLAE1NTgBOTk8ATk5PAE5OTwBOTk8ATk5PAE5OTwBOTk8AT09PAE9PTwBPT08AKysrAAAAAAAiIyQAQEFDAGJiZABoaGkAbW1uAHl5fACIiIkASUlLAE1NTgBOTk8ATk5PAE5OTwBOTk8ATk5PAE5OTwBOTk8ATk5PAE9PTwBPT08AKywsAAAAAAAkJCgAYmJkAGhoaQBtbW4AeXl8AIiIiQBJSUsATU1OAE5OTwBOTk8ATk5PAE5OTwBOTk8ATk5PAE5OTwBPT08AT09PAE9PTwAsLC0AAAAAACUlKQBiYmQAbW1uAHl5fACIiIkASUlLAE1NTgBOTk8ATk5PAE5OTwBOTk8ATk5PAE5OTwBOTk8AT09PAE9PTwBPT08AT1BQAC0tLgAAAAAAAAAAKCgoAG5ubwB5eXwAiIiJAElJSwBNTU4ATk5PAE5OTwBOTk8ATk5PAE5OTwBOTk8AT09PAE9PTwBPT08AT1BQAFBQUAAvLzAAAAAAAAAAACoqKwB5eXwAiIiJAElJSwBNTU4ATk5PAE5OTwBOTk8ATk5PAE5OTwBOTk8AT09PAE9PTwBQUFAAUVFRADExMgAAAAAAAAAAAAAAAAAAAAAAAAAAiIiJAElJSwBNTU4ATk5PAE5OTwBOTk8AUVFRAFJSUgBTU1QAVFRVAFVWVgBWVlgAMjIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEpKSwBPT08AVFRVAFhYWQBbW1wAXFxdAF1eXgBeX18AYGBhAGFhYgAyMjMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhYWQBcXF0AYGBhAGVlZgBoaGkAaWlpAGpqagBsbGwANjY2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBhAGpqagBwcHIAfX19ACMjJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nur App - رفيقك الإسلامي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lalezar&family=Tajawal:wght@200;300;400;500;700;800;900&family=Amiri+Quran&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-family-main: 'Tajawal', sans-serif;
+        --font-family-quran: 'Amiri Quran', serif;
+        --card-backdrop-blur: 16px; /* Default blur */
+      }
+
+      /* Base Styles */
+      body {
+        font-family: var(--font-family-main);
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        transition: background-color 0.5s ease;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-glow);
+        z-index: -1;
+        opacity: 0.2;
+        animation: backgroundGlow 25s infinite alternate ease-in-out;
+        will-change: transform;
+      }
+      
+      * {
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      /* Themes */
+      body.theme-night {
+        --bg-color: #0d1117;
+        --card-bg: rgba(22, 27, 34, 0.6);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --text-primary: #e6edf3;
+        --text-secondary: #848d97;
+        --accent-color: #3081f7;
+        --accent-glow: rgba(48, 129, 247, 0.4);
+        --bg-glow: radial-gradient(circle at 70% 30%, var(--accent-color), transparent 50%);
+        --card-backdrop-blur: 16px;
+      }
+      body.theme-liquid_glass {
+        --bg-color: #0c2a6d;
+        --card-bg: rgba(255, 255, 255, 0.08);
+        --border-color: rgba(255, 255, 255, 0.2);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.75);
+        --accent-color: #60a5fa;
+        --accent-glow: rgba(96, 165, 250, 0.5);
+        --bg-glow: radial-gradient(circle at 20% 80%, var(--accent-color), transparent 60%);
+        --card-backdrop-blur: 24px;
+      }
+      body.theme-sandy {
+        --bg-color: #fdf6e9;
+        --card-bg: rgba(255, 255, 255, 0.5);
+        --border-color: rgba(133, 77, 14, 0.2);
+        --text-primary: #523a28;
+        --text-secondary: #854d0e;
+        --accent-color: #d97706; /* Changed from reddish-orange to golden */
+        --accent-glow: rgba(217, 119, 6, 0.4); /* Adjusted glow to match new golden accent */
+        --bg-glow: radial-gradient(circle at 80% 20%, #f59e0b, transparent 60%); /* Adjusted background glow to a lighter gold */
+        --card-backdrop-blur: 16px;
+      }
+      body.theme-sky {
+        --bg-color: #0ea5e9;
+        --card-bg: rgba(255, 255, 255, 0.1);
+        --border-color: rgba(255, 255, 255, 0.25);
+        --text-primary: #ffffff;
+        --text-secondary: #e0f2fe;
+        --accent-color: #f0f9ff;
+        --accent-glow: rgba(240, 249, 255, 0.6);
+        --bg-glow: radial-gradient(circle at 30% 70%, #f0f9ff, transparent 50%);
+        --card-backdrop-blur: 24px;
+      }
+      body.theme-emerald {
+        --bg-color: #062a22;
+        --card-bg: rgba(16, 61, 48, 0.6);
+        --border-color: rgba(6, 78, 59, 0.5);
+        --text-primary: #d1fae5;
+        --text-secondary: #6ee7b7;
+        --accent-color: #34d399;
+        --accent-glow: rgba(52, 211, 153, 0.4);
+        --bg-glow: radial-gradient(circle at 20% 20%, #10b981, transparent 60%);
+        --card-backdrop-blur: 16px;
+      }
+      body.theme-royal {
+        --bg-color: #2c1f4a;
+        --card-bg: rgba(55, 41, 88, 0.6);
+        --border-color: rgba(167, 139, 250, 0.2);
+        --text-primary: #f5f3ff;
+        --text-secondary: #ddd6fe;
+        --accent-color: #c084fc;
+        --accent-glow: rgba(192, 132, 252, 0.4);
+        --bg-glow: radial-gradient(circle at 80% 80%, #a855f7, transparent 60%);
+        --card-backdrop-blur: 16px;
+      }
+      body.theme-slate {
+        --bg-color: #111827;
+        --card-bg: rgba(31, 41, 55, 0.6);
+        --border-color: rgba(75, 85, 99, 0.4);
+        --text-primary: #f9fafb;
+        --text-secondary: #9ca3af;
+        --accent-color: #60a5fa;
+        --accent-glow: rgba(96, 165, 250, 0.4);
+        --bg-glow: radial-gradient(circle at 50% 10%, #3b82f6, transparent 70%);
+        --card-backdrop-blur: 16px;
+      }
+      body.theme-frosted_glass {
+        --bg-color: #f0f4f8;
+        --card-bg: rgba(255, 255, 255, 0.65);
+        --border-color: rgba(100, 116, 139, 0.2);
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --accent-color: #0ea5e9;
+        --accent-glow: rgba(14, 165, 233, 0.4);
+        --bg-glow: radial-gradient(circle at 10% 90%, #38bdf8, transparent 70%);
+        --card-backdrop-blur: 32px;
+      }
+
+      /* Typography */
+      h1 { font-size: 2.25rem; line-height: 3rem; font-weight: 700; color: var(--text-primary); }
+      h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; color: var(--text-primary); }
+      h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; color: var(--text-primary); }
+      p { color: var(--text-secondary); }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent-glow); }
+
+      /* Animations */
+      .animate-fade-in-up {
+        animation: fadeInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      
+      .page-transition-enter {
+        animation: pageFadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes pageFadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px) scale(0.99);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes backgroundGlow {
+        from { transform: translate(-20%, -20%) scale(1.2); }
+        to { transform: translate(20%, 20%) scale(1.8); }
+      }
+       .animate-pulse-glow {
+        animation: pulse-glow 2.5s infinite ease-in-out;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-glow); }
+        50% { box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow); }
+      }
+      @keyframes subtle-border-pulse {
+        0%, 100% { border-color: var(--border-color); box-shadow: 0 0 15px transparent; }
+        50% { border-color: var(--accent-color); box-shadow: 0 0 15px var(--accent-glow); }
+      }
+      .animate-subtle-border-pulse {
+        animation: subtle-border-pulse 4s infinite ease-in-out;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.545.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-CcoVWEbV.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+</body>
+</html>
